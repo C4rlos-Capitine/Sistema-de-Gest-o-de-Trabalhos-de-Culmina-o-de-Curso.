@@ -252,7 +252,7 @@ if(($user->isLoggedIn()) && !$user->hasPermission('admin')){
         <button id="submit" class="btn btn-primary" onclick="buscarPorAno()">Buscar</button>
         </div>
         </div>
-        <a href="relatorio_estudante.php?id_curso=<?php echo $info_curso->id_curso; ?>">pdf</a>
+        <a href="relatorio_estudante.php?id_curso=<?php echo $info_curso->id_curso; ?>">Baixe a lista: <img style="width: 30px;height: 50px;" src="pdf.JPG"></a>
         </div>
         
         <table class="tb-data">
