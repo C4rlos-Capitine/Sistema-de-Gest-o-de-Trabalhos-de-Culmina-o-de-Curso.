@@ -32,7 +32,7 @@ if(Input::exists()){
         	$cod_user = "01.".$codigo.".".$cod_user;
 			//die($cod_user);
 			$user = new User();
-			$salt = Hash::salt(32);
+			$salt = Hash::salt(16);
 			try{
 				//date_default_timezone_set('America/Los_Angeles');
 				$user->create(array(
@@ -92,7 +92,7 @@ if(Input::exists()){
         </div>
         <div class="division"></div>
         <div>
-		<p>Username: <?php echo $user->data()->nome; ?></p>
+		<p>Username: <?php //echo $user->data()->nome; ?></p>
         </div>
         <div class="division"></div>
         <div>

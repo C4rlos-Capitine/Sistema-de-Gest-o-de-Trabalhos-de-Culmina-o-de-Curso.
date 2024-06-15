@@ -12,6 +12,7 @@ class DB2{
 	private $_results2;
 	public	$_count = 0;
 	private $_lastId;
+	private $error = false;
 	
 	private function __construct(){
 		
@@ -148,7 +149,6 @@ class DB2{
 	}
 	public function query($sql, $params = array()){
 		$this->error = false;
-		//print_r($params);
 		if($this->_query = $this->_pdo->prepare($sql)){
 			$x = 1;
 			if(count($params)){

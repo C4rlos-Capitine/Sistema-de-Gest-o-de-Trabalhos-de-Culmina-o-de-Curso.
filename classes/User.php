@@ -58,12 +58,15 @@ class User{
 			Session::put($this->_sessionName, $this->data()->id);
 		}else{
 			$user = $this->find($username);
-			var_dump($user);
+			//var_dump($user);
 			if($user){
-				
+				//var_dump($user);
+				var_dump($this->data()->password);
+				echo '<br>';
+				var_dump(Hash::make($password, $this->data()->salt));
 				if($this->data()->password === Hash::make($password, $this->data()->salt)){
 					Session::put($this->_sessionName, $this->data()->id);
-					//echo 'ok';
+					echo 'ok';
 					if($remember){
 						
 						$hash = Hash::unique();
@@ -126,7 +129,7 @@ class User{
 	}
 
 	public function hasPermission($key){
-		$group = $this->_db->get(array('groups'), array(array('id_group', '=', $this->data()->group_id)));
+		$group = $this->_db->get(array('grupo'), array(array('id_group', '=', $this->data()->group_id)));
 		//print_r($group->first()->name);
 		if($group->count2()){
 			$permissions = json_decode($group->first()->permissoes, true);

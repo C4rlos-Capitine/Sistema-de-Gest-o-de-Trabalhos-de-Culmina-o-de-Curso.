@@ -35,7 +35,7 @@ if(Input::exists()){
         	$cod_user = "01.".$codigo.".".$cod_user;
 			//die($cod_user);
 			$user = new User();
-			$salt = Hash::salt(32);
+			$salt = Hash::salt(16);
 			try{
 				//date_default_timezone_set('America/Los_Angeles');
 				$user->create(array(
